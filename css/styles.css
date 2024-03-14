@@ -67,7 +67,7 @@ body {
 }
 /* =================== /Main Styles ================= */
 
-/* =================== Header Styles ===================== */
+/* =================== Phone Styles Header ===================== */
 
 .page-header {
   border-bottom: 1px solid #e7e9fc;
@@ -97,6 +97,7 @@ body {
 .header-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .logo-header {
@@ -107,7 +108,6 @@ body {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #404bbf;
-  margin-right: 76px;
   padding: 17px 0;
 }
 
@@ -196,61 +196,207 @@ body {
 .page-address-link:focus {
   color: #404bbf;
 }
-/* =================== /Header Styles ===================== */
 
-/* ================ Page Hero Styles ===================== */
+.open-menu-btn {
+  padding: 0;
+  line-height: 0;
+  background-color: transparent;
+  border: none;
+}
+/* =================== Phone Styles Header ===================== */
+
+/* ================ Table styles Header==================== */
+@media screen and (min-width: 768px) {
+  .logo-header {
+    margin-right: 130px;
+  }
+
+  .menu {
+    display: flex;
+    gap: 40px;
+  }
+
+  .menu-link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    padding: 24px 0;
+    display: block;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .menu-link:hover,
+  .menu-link:focus {
+    color: #404bbf;
+  }
+
+  .current {
+    position: relative;
+    color: #404bbf;
+  }
+
+  .current::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    border-radius: 2px;
+    background-color: #404bbf;
+    height: 4px;
+    width: 100%;
+  }
+
+  .page-address {
+    display: block;
+  }
+
+  .page-address-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .page-address-link {
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.02em;
+    color: #434455;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .address-link:hover,
+  .address-link:focus {
+    color: #404bbf;
+  }
+
+  .open-menu-btn {
+    display: none;
+  }
+}
+/* ================ /Table styles Header ==================== */
+
+/* ================ Desktop styles Header ==================== */
+@media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding: 0 15px;
+  }
+
+  .logo-header {
+    margin-right: 76px;
+  }
+
+  .page-address-menu {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .page-address-item {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+/* ================ /Desktop styles Header==================== */
+
+/* ================ Phone Hero Styles ===================== */
+.main-title {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  max-width: 216px;
+  margin-bottom: 72px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11111;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #fff;
+}
+
 .page-hero {
-  background-color: #2e2f42;
-  padding: 188px 0;
+  margin-right: auto;
+  margin-left: auto;
+  background: #2e2f42;
+  padding: 72px 0;
+  background-size: cover;
   background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/hero-background/people-office.jpg);
-  max-width: 1440px;
-  background-size: cover;
-  margin-right: auto;
-  margin-left: auto;
+    url('../images/Mobile/hero-image-1x.jpg');
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.main-title {
-  font-weight: 700;
-  font-size: 56px;
-  line-height: 1.07143;
-  letter-spacing: 0.02em;
-  text-align: center;
-  color: #fff;
-  max-width: 496px;
-  margin-right: auto;
-  margin-left: auto;
+@media screen and (min-resolution: 192dpi) and (min-width: 320px) {
+  .page-hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/Mobile/hero-image@2x.jpg);
+  }
 }
 
 .page-hero-btn {
-  display: block;
-  font-weight: 500;
+  background: #4d5ae5;
+  color: #fff;
+  font-family: Roboto;
   font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  color: #fff;
-  border-radius: 4px;
+  margin: auto;
   padding: 16px 32px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   min-width: 169px;
   height: 56px;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-  background: #4d5ae5;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 48px;
+  display: block;
+  align-items: center;
+  cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .page-hero-btn:hover,
 .page-hero-btn:focus {
   background-color: #404bbf;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
 }
-/* ================ /Page Hero Styles ===================== */
+
+/* ================ Tablet Hero Styles ===================== */
+@media screen and (min-width: 768px) {
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url('../images/Tablet/hero-image.jpg');
+    padding: 112px 0;
+  }
+
+  @media screen and (min-resolution: 192dpi) and (min-width: 768px) {
+    .hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/Tablet/hero-image@2x.jpg);
+    }
+  }
+
+  .main-title {
+    max-width: 496px;
+    margin-bottom: 36px;
+    font-size: 56px;
+    line-height: 1.07143;
+  }
+}
 
 /* ==================== Page Benefits Style ================== */
 .page-benefits {
