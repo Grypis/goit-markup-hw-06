@@ -703,6 +703,7 @@ a {
 
 .content-footer {
   display: flex;
+  flex-direction: column;
   text-align: center;
 }
 
@@ -718,7 +719,6 @@ a {
 @media screen and (min-width: 1158px) {
   .content-footer {
     display: flex;
-    flex-direction: column;
     text-align: left;
   }
 }
